@@ -23,6 +23,10 @@ header {
     justify-content: center;
     width          : 40%;
 
+    .logo {
+      padding: 1rem;
+    }
+
     @at-root .title-container {
       display        : flex;
       flex-direction : column;
@@ -94,7 +98,16 @@ header {
     flex   : 1;
 
     .logo {
-      width: 30%;
+      width  : 30%;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
     }
   }
 

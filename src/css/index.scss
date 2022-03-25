@@ -1,8 +1,7 @@
 @import "main";
 
 body {
-  height          : 2000px;
-  background-color: var(--clr-black);
+  height: 3000px;
 }
 
 a {
@@ -11,11 +10,12 @@ a {
 }
 
 header {
+  z-index         : 999;
   position        : fixed;
   display         : flex;
   width           : 100%;
   height          : 8rem;
-  background-color: var(--clr-grey-2);
+  background-color: var(--clr-black-light);
   color           : var(--clr-primary-10);
 
   @at-root .logo-container {
@@ -122,12 +122,13 @@ header {
 
 /* mobile navbar*/
 .mobile-nav {
-  position        : fixed;
-  width           : 100vw;
-  height          : 100vh;
-  background-color: var(--clr-grey-2);
-  color           : var(--clr-primary-10);
-  transform       : translateY(-100vh);
+  z-index   : 999;
+  position  : fixed;
+  width     : 100vw;
+  height    : 100vh;
+  background: linear-gradient(to top, var(--clr-black-light), #000);
+  color     : var(--clr-primary-10);
+  transform : translateY(-100vh);
 
   .mobile-links {
     display        : flex;
@@ -138,8 +139,9 @@ header {
 
     .link,
     .close {
-      padding: 1.5rem;
-      cursor : pointer;
+      padding  : 1.5rem;
+      font-size: 2rem;
+      cursor   : pointer;
 
       &:hover {
         color: var(--clr-red-dark)
@@ -151,3 +153,5 @@ header {
     }
   }
 }
+
+@import "home";

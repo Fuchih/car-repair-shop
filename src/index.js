@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
       logoContainer.style.display = 'flex'
     }
 
-    navBar.style.backgroundColor = `rgba(36, 58, 82, 0.8)`
+    navBar.style.backgroundColor = `rgba(34, 34, 34, 0.5)`
     navBar.style.opacity = 1
 
     navTimer = setTimeout(() => {
@@ -26,7 +26,7 @@ window.addEventListener('scroll', () => {
     }, 2500)
   } else {
     logoContainer.style.display = 'flex'
-    navBar.style.backgroundColor = `rgba(36, 58, 82)`
+    navBar.style.backgroundColor = `rgba(34, 34, 34, 0.8)`
     navBar.style.height = '10rem'
   }
 })

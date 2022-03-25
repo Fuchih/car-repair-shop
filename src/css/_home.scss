@@ -1,4 +1,4 @@
-.home {
+.banner {
   position: relative;
   width   : 100%;
   height  : 1000px;
@@ -82,8 +82,8 @@
   display              : grid;
   gap                  : 3.125rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  background           : linear-gradient(to top, var(--clr-primary-1), var(--clr-primary-2));
   color                : var(--clr-primary-10);
+  @include linearGradient(top, var(--clr-primary-1), var(--clr-primary-2));
 
   @at-root .detail {
     padding   : 1rem;
@@ -144,23 +144,12 @@
   }
 
   .slogan-btn {
-    margin-top      : 3.5rem;
-    padding         : 0.5rem 1.25rem;
-    background-color: var(--clr-red-dark);
-    border          : 0;
-    border-radius   : 0.5rem;
-    font-size       : 1.25rem;
-    color           : var(--clr-primary-10);
-    text-transform  : uppercase;
-
-    &:active {
-      transform: scale(0.8);
-    }
+    @include button
   }
 }
 
 .feature {
-  background: linear-gradient(to top, var(--clr-black-light), var(--clr-primary-1));
+  @include linearGradient(bottom, var(--clr-primary-1), var(--clr-black-light));
 
   .feature-slogan {
     text-align: center;
@@ -196,5 +185,20 @@
         text-align: start;
       }
     }
+  }
+}
+
+.home-contact {
+  height          : 50rem;
+  background-color: var(--clr-black-light);
+  text-align      : center;
+
+  h2 {
+    padding  : 5rem 1rem 2rem 1rem;
+    font-size: 3rem;
+  }
+
+  button {
+    @include button
   }
 }

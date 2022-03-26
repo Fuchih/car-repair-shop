@@ -88,8 +88,73 @@
     fill : var(--clr-primary-10);
   }
 
+  .repairs {
+    animation: repairs 1s infinite linear;
+
+    @keyframes repairs {
+      0% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(-0.625rem);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .upholstery {
+    transform-origin: center;
+    animation       : upholstery 3s infinite linear;
+
+    @keyframes upholstery {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  .paintwork {
+    transform-origin: top center;
+    animation       : paintwork 8s infinite linear;
+
+    @keyframes paintwork {
+      0% {
+        fill: white;
+      }
+
+      25% {
+        fill: blue;
+      }
+
+      50% {
+        fill: red;
+      }
+
+      75% {
+        fill: green;
+      }
+
+      100% {
+        fill: white;
+      }
+    }
+  }
+
   @at-root .detail-title {
     font-size: 2.5rem;
+    color    : var(--clr-red-dark);
   }
 
   @at-root .desc {
@@ -159,16 +224,75 @@
     }
   }
 
-  .feature-icon {
-    width : 3rem;
-    height: 3rem;
-    fill  : var(--clr-red-dark);
-  }
-
   @at-root .offering {
     display              : grid;
     gap                  : 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    h3 {
+      color    : var(--clr-red-light);
+      font-size: 1.25rem;
+    }
+
+    @at-root .feature-icon {
+      width : 3rem;
+      height: 3rem;
+      fill  : var(--clr-red-dark);
+    }
+
+    .location {
+      animation: location 1s infinite linear;
+
+      @keyframes location {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-1rem);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    .price {
+      animation: price 3s infinite linear;
+
+      @keyframes price {
+        0% {
+          transform: rotate3d(0, 1, 0, 0deg);
+        }
+
+        50% {
+          transform: rotate3d(0, 1, 0, 360deg);
+        }
+
+        100% {
+          transform: rotate3d(0, 1, 0, 0deg);
+        }
+      }
+    }
+
+    .star {
+      animation: star 1s infinite linear;
+
+      @keyframes star {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.2);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
 
     li {
       text-align: center;

@@ -154,3 +154,46 @@ header {
 }
 
 @import "home";
+
+footer {
+  @include linearGradient(bottom, var(--clr-black-light), #000);
+  padding-top: 5rem;
+  text-align : center;
+
+  @at-root .footer-details {
+    display              : grid;
+    gap                  : 3.125rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content      : space-around;
+
+    h4 {
+      margin-left: 25%;
+      text-align : start;
+      font-size  : 1.75rem;
+      color      : var(--clr-red-dark)
+    }
+  }
+
+  .list {
+    text-align: start;
+
+    li {
+      margin-left: 25%;
+      font-size  : 1.25rem;
+    }
+  }
+
+  .address {
+    margin-bottom: 2rem;
+  }
+
+  hr {
+    margin: 2rem auto;
+    width : 80%;
+  }
+
+  h5 {
+    padding-bottom: 3rem;
+    font-size     : 1rem;
+  }
+}

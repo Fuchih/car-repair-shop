@@ -3,13 +3,12 @@
   width   : 100%;
   height  : 1000px;
 
-
-  video {
+  @at-root video {
     z-index  : -999;
     position : fixed;
     top      : 0;
     width    : 100%;
-    min-width: 1280px;
+    min-width: 1680px;
   }
 
   @at-root .spanner {
@@ -47,15 +46,9 @@
   }
 }
 
-@media screen and (max-width: 1800px) {
-  .home {
-    height: 800px;
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .home {
-    height: 650px;
+@media screen and (max-width: 576px) {
+  video {
+    min-width: 1280px;
   }
 }
 
@@ -138,8 +131,9 @@
   }
 
   p {
-    width    : 30rem;
+    max-width: 30rem;
     margin   : 0 auto;
+    padding  : 0 1.5rem;
     font-size: 1.25rem;
   }
 
@@ -180,16 +174,23 @@
       text-align: center;
 
       p {
-        width     : 25rem;
+        max-width : 25rem;
         margin    : 1rem auto;
+        padding   : 0 1rem;
         text-align: start;
       }
     }
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .offering {
+    grid-template-columns: 1fr;
+  }
+}
+
 .home-contact {
-  height          : 50rem;
+  height          : 25rem;
   background-color: var(--clr-black-light);
   text-align      : center;
 

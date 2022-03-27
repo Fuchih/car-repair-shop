@@ -20,5 +20,5 @@ const targetAnchors = [
 ]
 
 targetAnchors.forEach((anchors) => {
-  anchors.forEach((anchors) => pageNavigation(anchors))
+  anchors.forEach((anchor) => pageNavigation(anchor))
 })

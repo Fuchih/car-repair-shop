@@ -59,7 +59,7 @@ Global Styles
   margin    : 0;
   padding   : 0;
   box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 body {
@@ -103,6 +103,10 @@ h3 {
 
 h4 {
   font-size: 0.875rem;
+}
+
+a {
+  color: var(--clr-primary-10);
 }
 
 p {

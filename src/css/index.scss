@@ -1,9 +1,5 @@
 @import "main";
 
-a {
-  color: var(--clr-primary-10);
-}
-
 .link {
   text-transform: uppercase;
 }
@@ -137,19 +133,17 @@ header {
     align-items    : center;
     height         : 80%;
 
-    .link,
+    @at-root .link,
     .close {
-      padding  : 1.5rem;
-      font-size: 2rem;
-      cursor   : pointer;
+      a {
+        padding  : 1.5rem;
+        font-size: 2rem;
+        cursor   : pointer;
 
-      &:hover {
-        color: var(--clr-red-dark)
+        &:hover {
+          color: var(--clr-red-dark)
+        }
       }
-    }
-
-    .close {
-      font-size: 1.5rem;
     }
   }
 }

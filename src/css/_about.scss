@@ -12,7 +12,7 @@
   background     : no-repeat center url('https://res.cloudinary.com/t19887348/image/upload/v1648294105/car-service-worker_gfpwqh.jpg');
   background-size: cover;
 
-  h1 {
+  @at-root .about-title {
     padding         : 1rem 2rem;
     font-size       : 3rem;
     background-color: var(--clr-black-light);
@@ -63,6 +63,20 @@
         filter: grayscale(0);
       }
     }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .about-title {
+    padding  : 1rem 1rem;
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-title {
+    padding  : 1rem 0.5rem;
+    font-size: 1.25rem;
   }
 }
 

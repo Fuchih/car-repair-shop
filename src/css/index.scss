@@ -1,11 +1,11 @@
 @import "main";
 
-body {
-  height: 3000px;
-}
-
 a {
   color: var(--clr-primary-10);
+}
+
+.link {
+  text-transform: uppercase;
 }
 
 header {
@@ -51,6 +51,7 @@ header {
 
       li {
         font-size: 1.5rem;
+        cursor   : pointer;
       }
     }
   }
@@ -154,6 +155,7 @@ header {
 }
 
 @import "home";
+@import "about";
 
 footer {
   @include linearGradient(bottom, var(--clr-black-light), #000);
@@ -162,12 +164,12 @@ footer {
 
   @at-root .footer-details {
     display              : grid;
-    gap                  : 3.125rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content      : space-around;
+    justify-content      : space-between;
 
     h4 {
-      margin-left: 25%;
+      margin-top : 2rem;
+      margin-left: 10%;
       text-align : start;
       font-size  : 1.75rem;
       color      : var(--clr-red-dark)
@@ -178,7 +180,7 @@ footer {
     text-align: start;
 
     li {
-      margin-left: 25%;
+      margin-left: 10%;
       font-size  : 1.25rem;
     }
   }

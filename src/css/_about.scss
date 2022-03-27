@@ -1,0 +1,73 @@
+#about-us {
+  position : absolute;
+  transform: translateX(-500vw);
+}
+
+.about-banner {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  width          : 100%;
+  height         : 50rem;
+  background     : no-repeat center url('https://res.cloudinary.com/t19887348/image/upload/v1648294105/car-service-worker_gfpwqh.jpg');
+  background-size: cover;
+
+  h1 {
+    padding         : 1rem 2rem;
+    font-size       : 3rem;
+    background-color: var(--clr-black-light);
+  }
+}
+
+.about-container {
+  display              : grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content      : space-around;
+
+  @at-root .about-article {
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-between;
+    padding         : 4rem 2rem;
+    background-color: var(--clr-black-light);
+  }
+
+  @at-root .buttons {
+    display        : flex;
+    justify-content: space-between;
+
+    button {
+      @include button;
+    }
+  }
+}
+
+.figure-container {
+  padding         : 4rem 2rem;
+  background-color: var(--clr-black-light);
+
+  figure {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    align-items    : center;
+
+
+    img {
+      display      : block;
+      margin-bottom: 1rem;
+      max-width    : 350px;
+      filter       : grayscale(80%);
+
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .buttons {
+    flex-direction: column;
+  }
+}

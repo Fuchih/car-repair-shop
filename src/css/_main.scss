@@ -117,13 +117,13 @@ p {
 
 @mixin button {
   margin-top      : 3.5rem;
-  padding         : 0.5rem 1.25rem;
+  padding         : 1rem 2rem;
   background-color: var(--clr-red-dark);
   border          : 0;
-  border-radius   : 0.5rem;
   font-size       : 1.25rem;
   color           : var(--clr-primary-10);
   text-transform  : uppercase;
+  cursor          : pointer;
 
   &:active {
     transform: scale(0.8);

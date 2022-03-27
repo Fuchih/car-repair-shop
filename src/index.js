@@ -1,40 +1,19 @@
+import navAnimation from './modules/navAnimation'
+import scrollAnimation from './modules/scrollAnimation'
 import './css/index.scss'
 
-let navTimer = null
-
-window.addEventListener('scroll', () => {
-  const navBar = document.querySelector('.nav')
-  const logoContainer = document.querySelector('.logo-container')
-  const isMobileScreen = window.matchMedia('(max-width: 700px)').matches
-
-  window.clearTimeout(navTimer)
-
-  if (window.scrollY > 0) {
-    logoContainer.style.display = 'none'
-    navBar.style.height = `5rem`
-
-    if (isMobileScreen) {
-      logoContainer.style.display = 'flex'
-    }
-
-    navBar.style.backgroundColor = `rgba(34, 34, 34, 0.5)`
-    navBar.style.opacity = 1
-
-    navTimer = setTimeout(() => {
-      navBar.style.opacity = 0
-      navBar.style.height = 0
-    }, 2500)
-  } else {
-    logoContainer.style.display = 'flex'
-    navBar.style.backgroundColor = `rgba(34, 34, 34, 0.8)`
-    navBar.style.height = '10rem'
-  }
-})
+window.addEventListener('scroll', () => navAnimation())
 
 const barMenu = document.querySelector('.bar-container')
 const mobileNav = document.querySelector('.mobile-nav')
+const mobileLink = document.querySelector('.mobile-links')
 const closeBtn = document.querySelector('.close')
 let isMobileNavOpen = false
+
+function closeNavBanner() {
+  isMobileNavOpen = !isMobileNavOpen
+  mobileNav.style.transform = 'translateY(-100vh)'
+}
 
 barMenu.addEventListener('click', () => {
   isMobileNavOpen = !isMobileNavOpen
@@ -43,7 +22,45 @@ barMenu.addEventListener('click', () => {
   }
 })
 
-closeBtn.addEventListener('click', () => {
-  isMobileNavOpen = !isMobileNavOpen
-  mobileNav.style.transform = 'translateY(-100vh)'
+closeBtn.addEventListener('click', () => closeNavBanner())
+
+const homeAnchors = document.querySelectorAll('.home-anchor')
+const aboutAnchors = document.querySelectorAll('.about-anchor')
+const serviceAnchors = document.querySelectorAll('.service-anchor')
+const contactAnchors = document.querySelectorAll('.contact-anchor')
+const navBars = document.querySelectorAll('.nav-bar')
+const home = document.querySelector('#home')
+const aboutUs = document.querySelector('#about-us')
+
+const navTargets = [home, aboutUs]
+
+mobileLink.addEventListener('click', (e) => {
+  const target = e.target
+  if (target.nodeName === 'A') closeNavBanner()
+})
+
+homeAnchors.forEach((homeAnchor) => {
+  homeAnchor.addEventListener('click', () => {
+    navTargets.forEach((target) => {
+      target.style.position = 'absolute'
+      target.style.transform = 'translateX(-500vw)'
+    })
+
+    home.style.position = 'static'
+    home.style.transform = 'translateX(0)'
+    scrollAnimation(window, 0)
+  })
+})
+
+aboutAnchors.forEach((aboutAnchor) => {
+  aboutAnchor.addEventListener('click', () => {
+    navTargets.forEach((target) => {
+      target.style.position = 'absolute'
+      target.style.transform = 'translateX(-500vw)'
+    })
+
+    aboutUs.style.position = 'static'
+    aboutUs.style.transform = 'translateX(0)'
+    scrollAnimation(window, 0)
+  })
 })

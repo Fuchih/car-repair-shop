@@ -1,8 +1,3 @@
-// #home {
-//   position : absolute;
-//   transform: translateX(-500vw);
-// }
-
 .banner {
   position: relative;
   width   : 100%;
@@ -16,36 +11,46 @@
     min-width: 1680px;
   }
 
-  @at-root .spanner {
-    z-index      : 10;
-    position     : absolute;
-    top          : 0;
-    left         : 50%;
-    width        : 10rem;
-    height       : 10rem;
-    border       : 0.3125rem solid;
-    border-radius: 50%;
-    color        : var(--clr-primary-10);
-    transform    : translate(-50%, 150%);
+  .home-header {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    width          : 100%;
+    height         : 100%;
 
-    .vintage-car {
-      stroke   : var(--clr-primary-10);
-      animation: spanners 10s infinite linear;
-
-      @keyframes spanners {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
+    @at-root .home-title {
+      width           : 50rem;
+      padding         : 1rem;
+      background-color: rgba($color: #000000, $alpha: 0.35);
+      text-align      : center;
     }
 
-    @at-root .mechanic {
-      width    : 50rem;
-      transform: translateX(-35%);
+    @at-root .spanner {
+      z-index      : 10;
+      position     : absolute;
+      top          : 0;
+      left         : 50%;
+      width        : 10rem;
+      height       : 10rem;
+      border       : 0.3125rem solid;
+      border-radius: 50%;
+      color        : var(--clr-primary-10);
+      transform    : translate(-50%, 150%);
+
+      .vintage-car {
+        stroke   : var(--clr-primary-10);
+        animation: spanners 10s infinite linear;
+
+        @keyframes spanners {
+          0% {
+            transform: rotate(0deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
     }
   }
 }
@@ -57,9 +62,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .mechanic {
+  .home-title {
     font-size: 2rem;
-    transform: translateX(-20%);
   }
 }
 
@@ -69,9 +73,8 @@
     height: 8rem;
   }
 
-  .mechanic {
+  .home-title {
     font-size: 1.35rem;
-    transform: translateX(-10%);
   }
 }
 

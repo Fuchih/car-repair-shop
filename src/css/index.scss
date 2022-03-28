@@ -156,6 +156,7 @@ header {
 @import "home";
 @import "about";
 @import "service";
+@import "contact";
 
 footer {
   @include linearGradient(bottom, var(--clr-black-light), #000);

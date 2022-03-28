@@ -1,10 +1,15 @@
+#service {
+  position : absolute;
+  transform: translateX(-500vw);
+}
+
 .service-header {
   display        : flex;
   flex-direction : column;
   justify-content: center;
   align-items    : center;
   height         : 60rem;
-  background     : no-repeat center url('https://res.cloudinary.com/t19887348/image/upload/v1648388829/service_n5kk0y.webp');
+  background     : no-repeat center url('https://res.cloudinary.com/t19887348/image/upload/v1648441149/service_lrvms7.webp');
   background-size: cover;
 
   .service-title {
@@ -209,8 +214,6 @@
     }
   }
 }
-
-
 
 .book-now {
   @include button;

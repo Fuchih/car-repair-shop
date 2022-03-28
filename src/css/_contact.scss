@@ -1,0 +1,79 @@
+#contact {
+  position : absolute;
+  transform: translateX(-500vw);
+}
+
+.contact-header {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  height         : 60rem;
+  background     : no-repeat center url('https://res.cloudinary.com/t19887348/image/upload/v1648442601/grey-blue-cars_xqb8ts.jpg');
+  background-size: cover;
+
+  .contact-title {
+    padding         : 0.5rem 2rem;
+    background-color: rgba($color: #000000, $alpha: 0.35);
+    transform       : translateY(-5rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact-title {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-container {
+  display              : grid;
+  gap                  : 3.125rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content      : center;
+  width                : 90%;
+  margin               : 3rem auto;
+
+  @at-root .contact-details {
+    display        : grid;
+    gap            : 2rem;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 1.75rem;
+      color    : var(--clr-red);
+    }
+  }
+
+  @at-root .contact-form {
+
+    input,
+    label {
+      display  : block;
+      width    : 90%;
+      height   : 2rem;
+      font-size: 1.5rem;
+
+    }
+
+    input {
+      margin-bottom: 3rem;
+      outline      : none;
+    }
+
+    #message {
+      width  : 90%;
+      height : 10rem;
+      outline: none;
+      resize : none;
+    }
+
+    #contact-submit {
+      @include button
+    }
+  }
+}

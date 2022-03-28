@@ -28,7 +28,12 @@ header {
       justify-content: center;
 
       .title {
-        color: var(--clr-red-dark);
+        color    : var(--clr-red-dark);
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
       }
     }
 
@@ -150,6 +155,7 @@ header {
 
 @import "home";
 @import "about";
+@import "service";
 
 footer {
   @include linearGradient(bottom, var(--clr-black-light), #000);

@@ -7,14 +7,12 @@
   display        : flex;
   justify-content: center;
   align-items    : center;
-  width          : 100%;
-  height         : 50rem;
+  height         : 60rem;
   background     : no-repeat center url('https://res.cloudinary.com/t19887348/image/upload/v1648294105/car-service-worker_gfpwqh.jpg');
   background-size: cover;
 
   @at-root .about-title {
     padding         : 1rem 2rem;
-    font-size       : 3rem;
     background-color: var(--clr-black-light);
   }
 }

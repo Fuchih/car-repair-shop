@@ -1,0 +1,247 @@
+.service-header {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  height         : 60rem;
+  background     : no-repeat center url('https://res.cloudinary.com/t19887348/image/upload/v1648388829/service_n5kk0y.webp');
+  background-size: cover;
+
+  .service-title {
+    padding         : 1rem 2rem;
+    background-color: var(--clr-black-light);
+  }
+
+  .title-description {
+    width           : 80%;
+    padding         : 0.5rem 2rem;
+    background-color: var(--clr-black-light);
+    text-align      : center;
+  }
+}
+
+.service-lists {
+  display              : grid;
+  gap                  : 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  justify-content      : space-around;
+  padding              : 5rem;
+
+  svg {
+    width : 5rem;
+    height: 5rem;
+    fill  : var(--clr-primary-10)
+  }
+
+  .service-list {
+
+    >h2 {
+      color    : var(--clr-red-dark);
+      font-size: 1.75rem;
+    }
+  }
+}
+
+/*SVG animation*/
+.service-list {
+  &:hover .dedicated-mechanics {
+    animation: dedicated-mechanics 1.5s linear;
+
+    @keyframes dedicated-mechanics {
+      0% {
+        transform: rotate3d(1, 1, 0, 0deg);
+      }
+
+      50% {
+        transform: rotate3d(1, 1, 0, 360deg);
+      }
+
+      100% {
+        transform: rotate3d(1, 1, 0, 0deg);
+      }
+    }
+  }
+
+  &:hover .car-checks {
+    animation: car-checks 1.5s linear;
+
+    @keyframes car-checks {
+      0% {
+        fill: var(--clr-primary-10);
+      }
+
+      25% {
+        fill: var(--clr-red);
+      }
+
+      50% {
+        fill: var(--clr-red);
+      }
+
+      75% {
+        fill: var(--clr-red);
+      }
+
+      100% {
+        fill: var(--clr-primary-10);
+      }
+    }
+  }
+
+  &:hover .oil {
+    animation: oil 0.8s 3 linear;
+
+    @keyframes oil {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(15px);
+        opacity  : 0.8;
+      }
+
+      100% {
+        transform: translateY(30px);
+        opacity  : 0;
+      }
+    }
+  }
+
+  &:hover .breakdown-service {
+    animation       : breakdown-service 1.5s linear;
+    transform-origin: right bottom;
+
+    @keyframes breakdown-service {
+      0% {
+        transform: translateX(-25px);
+        opacity  : 0.2;
+      }
+
+      15% {
+        transform: translateX(-7px);
+        opacity  : 0.4;
+      }
+
+      20% {
+        transform: translateX(0);
+        opacity  : 0.6;
+      }
+
+      50% {
+        transform: rotate(10deg);
+        opacity  : 0.8;
+      }
+
+      55% {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &:hover .tire-change {
+    animation: tire-change 1.5s linear;
+
+    @keyframes tire-change {
+      0% {
+        transform: translateY(0);
+      }
+
+      25% {
+        transform: translateY(-10px);
+      }
+
+      40% {
+        transform: translateY(-20px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      60% {
+        transform: translateY(-20px);
+      }
+
+      75% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  }
+
+  &:hover .battery-positive {
+    animation: battery-positive 1.5s 3 linear;
+
+    @keyframes battery-positive {
+      0% {
+        fill: var(--clr-primary-10);
+      }
+
+      50% {
+        fill: var(--clr-red);
+      }
+
+      100% {
+        fill: var(--clr-primary-10);
+      }
+    }
+  }
+
+  &:hover .battery-negative {
+    animation: battery-negative 1.5s linear;
+
+    @keyframes battery-negative {
+      0% {
+        fill: var(--clr-primary-3);
+      }
+
+      50% {
+        fill: var(--clr-primary-10);
+      }
+
+      100% {
+        fill: var(--clr-primary-3);
+      }
+    }
+  }
+}
+
+
+
+.book-now {
+  @include button;
+  display: block;
+  margin : 5rem auto;
+}
+
+@media screen and (max-width: 768px) {
+  .service-lists {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .service-title {
+    padding  : 1rem 1rem;
+    font-size: 2rem;
+  }
+
+  .title-description {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .service-title {
+    padding  : 1rem 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .title-description {
+    font-size: 1rem;
+  }
+}

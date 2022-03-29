@@ -19,6 +19,6 @@ export default function pageNavigation(pageAnchor) {
     navTargets[targetName].style.position = 'static'
     navTargets[targetName].style.transform = 'translateX(0)'
 
-    scrollAnimation(window, 0)
+    scrollAnimation()
   })
 }

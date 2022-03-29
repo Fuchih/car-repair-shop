@@ -1,14 +1,11 @@
-export default function scrollAnimation(obj, target) {
-  clearInterval(obj.timer)
+let step = 0
 
-  obj.timer = setInterval(() => {
-    let step = (target - window.pageYOffset) / 10
-    step = step > 0 ? Math.ceil(step) : Math.floor(step)
-
-    if (window.pageYOffset === target) {
-      clearInterval(obj.timer)
-    }
-
+export default function scrollAnimation() {
+  if (window.pageYOffset > 0) {
+    step -= 10
     window.scroll(0, window.pageYOffset + step)
-  }, 20)
+    requestAnimationFrame(scrollAnimation)
+  } else {
+    step = 0
+  }
 }

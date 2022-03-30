@@ -4,8 +4,13 @@ export default function navAnimation() {
   const navBar = document.querySelector('.nav')
   const logoContainer = document.querySelector('.logo-container')
   const isMobileScreen = window.matchMedia('(max-width: 700px)').matches
+  const messenger = document.querySelector('#messenger')
 
   window.clearTimeout(navTimer)
+
+  window.scrollY > 200
+    ? (messenger.style.opacity = 1)
+    : (messenger.style.opacity = 0)
 
   if (window.scrollY > 0) {
     logoContainer.style.display = 'none'
@@ -21,6 +26,7 @@ export default function navAnimation() {
     navTimer = setTimeout(() => {
       navBar.style.opacity = 0
       navBar.style.height = 0
+      messenger.style.opacity = 0
     }, 2500)
   } else {
     logoContainer.style.display = 'flex'

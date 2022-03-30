@@ -51,7 +51,7 @@ toMapButton.addEventListener('click', () => {
 
   setTimeout(() => {
     window.scrollTo({
-      top: googleMap.getBoundingClientRect().top - 100,
+      top: googleMap.getBoundingClientRect().top - 45,
       behavior: 'smooth',
     })
   }, 800)

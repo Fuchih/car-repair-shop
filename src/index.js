@@ -10,8 +10,9 @@ const homeAnchors = document.querySelectorAll('.home-anchor')
 const aboutAnchors = document.querySelectorAll('.about-anchor')
 const serviceAnchors = document.querySelectorAll('.service-anchor')
 const contactAnchors = document.querySelectorAll('.contact-anchor')
-const redirectToService = document.querySelector('#redirect-to-service')
-const redirectToMapButton = document.querySelector('#redirect-to-map')
+const toServiceButton = document.querySelector('#redirect-to-service')
+const toMapButton = document.querySelector('#redirect-to-map')
+const toItemsButton = document.querySelectorAll('.redirect-items')
 const googleMap = document.querySelector('#google-map')
 
 window.addEventListener('load', () => {
@@ -41,12 +42,12 @@ targetAnchors.forEach((anchors) => {
   )
 })
 
-redirectToService.addEventListener('click', () => {
-  pageNavigation(serviceAnchors[0])
+toServiceButton.addEventListener('click', () => {
+  pageNavigation('service')
 })
 
-redirectToMapButton.addEventListener('click', () => {
-  pageNavigation(contactAnchors[0])
+toMapButton.addEventListener('click', () => {
+  pageNavigation('contact')
 
   setTimeout(() => {
     window.scrollTo({
@@ -55,3 +56,9 @@ redirectToMapButton.addEventListener('click', () => {
     })
   }, 800)
 })
+
+toItemsButton.forEach((button) =>
+  button.addEventListener('click', () => {
+    pageNavigation('items')
+  }),
+)

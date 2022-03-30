@@ -1,5 +1,7 @@
 #items-container {
-  min-height: 20rem;
+  position  : absolute;
+  transform : translateX(-500vw);
+  min-height: 31.25rem;
 
   .items-title {
     padding   : 15rem 0 5rem 0;
@@ -11,6 +13,9 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
     @at-root .item {
+      display         : flex;
+      flex-direction  : column;
+      justify-content : space-around;
       margin          : 1rem;
       padding         : 1rem;
       text-align      : center;

@@ -1,3 +1,7 @@
+#home {
+  display: none;
+}
+
 .banner {
   position: relative;
   width   : 100%;
@@ -34,7 +38,6 @@
       height       : 10rem;
       border       : 0.3125rem solid;
       border-radius: 50%;
-      color        : var(--clr-primary-10);
       transform    : translate(-50%, 150%);
 
       .vintage-car {
@@ -82,7 +85,6 @@
   display              : grid;
   gap                  : 3.125rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  color                : var(--clr-primary-10);
   @include linearGradient(top, var(--clr-primary-1), var(--clr-black));
 
   @at-root .detail {

@@ -1,4 +1,9 @@
 @import "main";
+@import "home";
+@import "about";
+@import "service";
+@import "contact";
+@import "items";
 
 #wrap {
   opacity: 0;
@@ -160,11 +165,6 @@
     }
   }
 }
-
-@import "home";
-@import "about";
-@import "service";
-@import "contact";
 
 footer {
   @include linearGradient(bottom, var(--clr-black-light), #000);

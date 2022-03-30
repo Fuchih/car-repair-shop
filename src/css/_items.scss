@@ -1,0 +1,60 @@
+#items-container {
+  min-height: 20rem;
+
+  .items-title {
+    padding   : 15rem 0 5rem 0;
+    text-align: center;
+  }
+
+  @at-root .items {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    @at-root .item {
+      margin          : 1rem;
+      padding         : 1rem;
+      text-align      : center;
+      background-color: var(--clr-grey-10);
+
+      &:hover .item-img {
+        filter: grayscale(0);
+      }
+
+      .item-img {
+        width : 100%;
+        filter: grayscale(60%);
+      }
+
+      .item-title,
+      .item-price {
+        color: var(--clr-black);
+      }
+
+      .item-price {
+        font-size: 1.5rem;
+      }
+
+      .item-book {
+        @include button
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .items-title,
+  .item-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .items-title,
+  .item-title {
+    font-size: 1.75rem;
+  }
+}

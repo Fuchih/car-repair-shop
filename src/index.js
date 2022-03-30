@@ -4,7 +4,7 @@ import pageNavigation from './modules/pageNavigation'
 import './css/index.scss'
 
 const preloader = document.querySelector('#preloader')
-const warp = document.querySelector('#wrap')
+const wrap = document.querySelector('#wrap')
 const barMenu = document.querySelector('.bar-container')
 const homeAnchors = document.querySelectorAll('.home-anchor')
 const aboutAnchors = document.querySelectorAll('.about-anchor')
@@ -31,5 +31,11 @@ const targetAnchors = [
 ]
 
 targetAnchors.forEach((anchors) => {
-  anchors.forEach((anchor) => pageNavigation(anchor))
+  anchors.forEach((anchor) =>
+    anchor.addEventListener('click', (e) => {
+      pageNavigation(e)
+    }),
+  )
 })
+
+const directToMapButton = document.querySelector('#direct-to-map')

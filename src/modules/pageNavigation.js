@@ -7,18 +7,16 @@ const contact = document.querySelector('#contact')
 
 const navTargets = { home, about, service, contact }
 
-export default function pageNavigation(pageAnchor) {
-  return pageAnchor.addEventListener('click', (e) => {
-    const targetName = e.target.textContent
+export default function pageNavigation(e) {
+  const targetName = e.target.textContent
 
-    for (const targetName in navTargets) {
-      navTargets[targetName].style.position = 'absolute'
-      navTargets[targetName].style.transform = 'translateX(-500vw)'
-    }
+  for (const targetName in navTargets) {
+    navTargets[targetName].style.position = 'absolute'
+    navTargets[targetName].style.transform = 'translateX(-500vw)'
+  }
 
-    navTargets[targetName].style.position = 'static'
-    navTargets[targetName].style.transform = 'translateX(0)'
+  navTargets[targetName].style.position = 'static'
+  navTargets[targetName].style.transform = 'translateX(0)'
 
-    scrollAnimation()
-  })
+  scrollAnimation()
 }

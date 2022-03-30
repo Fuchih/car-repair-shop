@@ -8,7 +8,7 @@ const contact = document.querySelector('#contact')
 const navTargets = { home, about, service, contact }
 
 export default function pageNavigation(e) {
-  const targetName = e.target.textContent
+  const targetName = e.target.textContent ?? e.textContent
 
   for (const targetName in navTargets) {
     navTargets[targetName].style.position = 'absolute'

@@ -10,6 +10,9 @@ const homeAnchors = document.querySelectorAll('.home-anchor')
 const aboutAnchors = document.querySelectorAll('.about-anchor')
 const serviceAnchors = document.querySelectorAll('.service-anchor')
 const contactAnchors = document.querySelectorAll('.contact-anchor')
+const redirectToService = document.querySelector('#redirect-to-service')
+const redirectToMapButton = document.querySelector('#redirect-to-map')
+const googleMap = document.querySelector('#google-map')
 
 window.addEventListener('load', () => {
   preloader.style.opacity = 0
@@ -38,4 +41,17 @@ targetAnchors.forEach((anchors) => {
   )
 })
 
-const directToMapButton = document.querySelector('#direct-to-map')
+redirectToService.addEventListener('click', () => {
+  pageNavigation(serviceAnchors[0])
+})
+
+redirectToMapButton.addEventListener('click', () => {
+  pageNavigation(contactAnchors[0])
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: googleMap.getBoundingClientRect().top - 100,
+      behavior: 'smooth',
+    })
+  }, 800)
+})

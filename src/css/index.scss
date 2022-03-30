@@ -1,11 +1,15 @@
 @import "main";
 
+#wrap {
+  opacity: 0;
+}
+
 .link {
   text-transform: uppercase;
 }
 
 header {
-  z-index         : 999;
+  z-index         : 900;
   position        : fixed;
   display         : flex;
   width           : 100%;
@@ -199,4 +203,13 @@ footer {
     padding-bottom: 3rem;
     font-size     : 1rem;
   }
+}
+
+#preloader {
+  z-index        : 999;
+  position       : fixed;
+  width          : 100%;
+  height         : 100vh;
+  background     : var(--clr-black) no-repeat center center url('https://res.cloudinary.com/t19887348/image/upload/v1648595436/loader_tkhkzx.gif');
+  background-size: 30%;
 }

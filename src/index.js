@@ -1,6 +1,7 @@
 import navAnimation from './modules/navAnimation'
 import toggleNavBar from './modules/toggleNavBar'
 import pageNavigation from './modules/pageNavigation'
+import fetchItemsData from './modules/fetchItems'
 import './css/index.scss'
 
 const preloader = document.querySelector('#preloader')
@@ -60,5 +61,28 @@ toMapButton.addEventListener('click', () => {
 toItemsButton.forEach((button) =>
   button.addEventListener('click', () => {
     pageNavigation('items')
+
+    fetchItemsData().then((data) => {
+      const items = document.querySelector('.items')
+
+      const itemList = data
+        .map((item) => {
+          return `
+            <li class="item">
+              <img
+                class="item-img"
+                src=${item.img}
+                alt=${item.title}
+              />
+              <h2 class="item-title">${item.title}</h2>
+              <div class="item-price">$${item.price}</div>
+              <button class="item-book">book now</button>
+            </li>
+          `
+        })
+        .join('')
+
+      items.innerHTML = itemList
+    })
   }),
 )

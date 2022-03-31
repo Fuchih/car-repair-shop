@@ -1,7 +1,7 @@
 import navAnimation from './modules/navAnimation'
 import toggleNavBar from './modules/toggleNavBar'
 import pageNavigation from './modules/pageNavigation'
-import fetchItemsData from './modules/fetchItems'
+import fetchData from './modules/fetchData'
 import './css/index.scss'
 
 const preloader = document.querySelector('#preloader')
@@ -62,7 +62,9 @@ toItemsButton.forEach((button) =>
   button.addEventListener('click', () => {
     pageNavigation('items')
 
-    fetchItemsData().then((data) => {
+    const itemsData =
+      'https://res.cloudinary.com/t19887348/raw/upload/v1648694975/service-items_mgnfpi.json'
+    fetchData(itemsData).then((data) => {
       const items = document.querySelector('.items')
 
       const itemList = data

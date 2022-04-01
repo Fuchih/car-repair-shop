@@ -2,6 +2,7 @@ import navAnimation from './modules/navAnimation'
 import toggleNavBar from './modules/toggleNavBar'
 import pageNavigation from './modules/pageNavigation'
 import fetchData from './modules/fetchData'
+import emailjs from '@emailjs/browser'
 import './css/index.scss'
 
 const preloader = document.querySelector('#preloader')
@@ -15,6 +16,7 @@ const toServiceButton = document.querySelector('#redirect-to-service')
 const toMapButton = document.querySelector('#redirect-to-map')
 const toItemsButton = document.querySelectorAll('.redirect-items')
 const googleMap = document.querySelector('#google-map')
+const submitForm = document.querySelector('#contact-form')
 
 window.addEventListener('load', () => {
   preloader.style.opacity = 0
@@ -88,3 +90,27 @@ toItemsButton.forEach((button) =>
     })
   }),
 )
+
+submitForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  emailjs
+    .sendForm(
+      'service_0jti1ia',
+      'template_ijv8ccf',
+      '#contact-form',
+      'cm2n-IR-_xcXVmrHC',
+    )
+    .then(
+      (response) => {
+        alert('Your message has been submitted.')
+        console.log('SUCCESS!', response.status, response.text)
+      },
+      (err) => {
+        alert('An error occurred please try again later.')
+        console.log('FAILED...', err)
+      },
+    )
+
+  submitForm.reset()
+})

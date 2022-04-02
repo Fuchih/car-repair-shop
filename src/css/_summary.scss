@@ -1,8 +1,10 @@
 #summary {
-  // position  : absolute;
-  // transform : translateX(-500vw);
-  min-height: 31.25rem;
-  padding   : 0 2.5rem;
+  // position        : absolute;
+  // transform       : translateX(-500vw);
+  min-height      : 31.25rem;
+  padding         : 2rem 2.5rem;
+  color           : var(--clr-black);
+  background-color: #fff;
 
   @at-root .booking-header {
     padding: 15rem 0 5rem 0;
@@ -13,13 +15,23 @@
   }
 
   @at-root #dateTimePicker {
-    width     : 50%;
-    height    : 2 5rem;
-    margin    : 2rem 0;
-    text-align: center;
-    font-size : 2rem;
-    outline   : none;
-    cursor    : pointer;
+    width           : 80%;
+    height          : 2 5rem;
+    margin          : 2rem 0;
+    padding         : 1rem 2rem;
+    border          : none;
+    background-color: var(--clr-red-dark);
+    text-align      : center;
+    font-size       : 2rem;
+    color           : var(--clr-primary-10);
+    outline         : none;
+    cursor          : pointer;
+
+    &::placeholder {
+      color  : var(--clr-primary-10);
+      opacity: 1;
+      /* Firefox */
+    }
   }
 
   @at-root .booking-details {
@@ -84,7 +96,7 @@
   }
 
   #dateTimePicker {
-    width    : 70%;
+    width    : 100%;
     font-size: 1.25rem;
   }
 }

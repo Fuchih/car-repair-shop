@@ -5,8 +5,9 @@ const about = document.querySelector('#about-us')
 const service = document.querySelector('#service')
 const contact = document.querySelector('#contact')
 const items = document.querySelector('#items-container')
+const summary = document.querySelector('#summary')
 
-const navTargets = { home, about, service, contact, items }
+const navTargets = { home, about, service, contact, items, summary }
 
 export default function pageNavigation(event) {
   const targetName = event.target?.textContent ?? event

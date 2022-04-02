@@ -2,21 +2,9 @@ import navAnimation from './modules/navAnimation'
 import toggleNavBar from './modules/toggleNavBar'
 import pageNavigation from './modules/pageNavigation'
 import fetchData from './modules/fetchData'
+import MCDatepicker from 'mc-datepicker'
 import emailjs from '@emailjs/browser'
 import './css/index.scss'
-import MCDatepicker from 'mc-datepicker'
-
-const x = document.querySelector('#dateTimePicker')
-
-const datePicker = MCDatepicker.create({
-  el: '#dateTimePicker',
-  bodyType: 'modal',
-  selectedDate: new Date(),
-  dateFormat: 'dddd, dd mmm yy',
-})
-
-const formattedDate = datePicker.getFormatedDate()
-datePicker.onClose(() => console.log(x.value))
 
 const preloader = document.querySelector('#preloader')
 const wrap = document.querySelector('#wrap')
@@ -30,6 +18,7 @@ const toMapButton = document.querySelector('#redirect-to-map')
 const toItemsButton = document.querySelectorAll('.redirect-items')
 const googleMap = document.querySelector('#google-map')
 const submitForm = document.querySelector('#contact-form')
+const dateTimeInput = document.querySelector('#dateTimePicker')
 
 window.addEventListener('load', () => {
   preloader.style.opacity = 0
@@ -127,3 +116,23 @@ submitForm.addEventListener('submit', (e) => {
 
   submitForm.reset()
 })
+
+const itemsList = document.querySelector('.items')
+
+itemsList.addEventListener('click', (e) => {
+  let target = e.target
+  if (target.nodeName === 'BUTTON') pageNavigation('summary')
+})
+
+const datePicker = MCDatepicker.create({
+  el: '#dateTimePicker',
+  bodyType: 'modal',
+  selectedDate: new Date(),
+  dateFormat: 'dddd, dd mmm yy',
+  theme: {
+    theme_color: 'rgb(34, 34, 34, 0.8)',
+  },
+})
+
+const formattedDate = datePicker.getFormatedDate()
+datePicker.onClose(() => console.log(dateTimeInput.value))

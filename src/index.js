@@ -4,6 +4,19 @@ import pageNavigation from './modules/pageNavigation'
 import fetchData from './modules/fetchData'
 import emailjs from '@emailjs/browser'
 import './css/index.scss'
+import MCDatepicker from 'mc-datepicker'
+
+const x = document.querySelector('#dateTimePicker')
+
+const datePicker = MCDatepicker.create({
+  el: '#dateTimePicker',
+  bodyType: 'modal',
+  selectedDate: new Date(),
+  dateFormat: 'dddd, dd mmm yy',
+})
+
+const formattedDate = datePicker.getFormatedDate()
+datePicker.onClose(() => console.log(x.value))
 
 const preloader = document.querySelector('#preloader')
 const wrap = document.querySelector('#wrap')

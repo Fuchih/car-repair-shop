@@ -2,7 +2,7 @@ import navAnimation from './modules/navAnimation'
 import toggleNavBar from './modules/toggleNavBar'
 import pageNavigation from './modules/pageNavigation'
 import fetchData from './modules/fetchData'
-import MCDatepicker from 'mc-datepicker'
+import setSummary from './modules/summary'
 import emailjs from '@emailjs/browser'
 import './css/index.scss'
 
@@ -18,7 +18,7 @@ const toMapButton = document.querySelector('#redirect-to-map')
 const toItemsButton = document.querySelectorAll('.redirect-items')
 const googleMap = document.querySelector('#google-map')
 const submitForm = document.querySelector('#contact-form')
-const dateTimeInput = document.querySelector('#dateTimePicker')
+const itemsList = document.querySelector('.items')
 
 window.addEventListener('load', () => {
   preloader.style.opacity = 0
@@ -117,22 +117,19 @@ submitForm.addEventListener('submit', (e) => {
   submitForm.reset()
 })
 
-const itemsList = document.querySelector('.items')
-
 itemsList.addEventListener('click', (e) => {
+  const itemTitle = document.querySelector('.booking-item-title')
+  const summaryPrice = document.querySelector('.summary-detail-price')
+
   let target = e.target
   if (target.nodeName === 'BUTTON') pageNavigation('summary')
+
+  const selectedItem =
+    target.previousElementSibling.previousElementSibling.textContent
+  const selectedItemPrice = target.previousElementSibling.textContent
+
+  itemTitle.innerText = selectedItem
+  summaryPrice.innerText = selectedItemPrice
 })
 
-const datePicker = MCDatepicker.create({
-  el: '#dateTimePicker',
-  bodyType: 'modal',
-  selectedDate: new Date(),
-  dateFormat: 'dddd, dd mmm yy',
-  theme: {
-    theme_color: 'rgb(34, 34, 34, 0.8)',
-  },
-})
-
-const formattedDate = datePicker.getFormatedDate()
-datePicker.onClose(() => console.log(dateTimeInput.value))
+setSummary()

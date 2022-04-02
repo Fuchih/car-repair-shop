@@ -63,8 +63,19 @@
     margin: 2rem 0;
   }
 
+  .summary-detail-time {
+    font-weight: normal;
+    font-style : italic;
+  }
+
   #booking-next {
     @include button
+  }
+
+  .selected-time {
+    border-color    : var(--clr-red);
+    background-color: var(--clr-red-light);
+    color           : var(--clr-primary-10)
   }
 }
 
@@ -91,7 +102,7 @@
 
   .date-format,
   .summary-detail-title,
-  .summary-detail-time {
+  .summary-detail-dateTime {
     font-size: 1.75rem;
   }
 
@@ -114,7 +125,7 @@
 
   .date-format,
   .summary-detail-title,
-  .summary-detail-time {
+  .summary-detail-dateTime {
     font-size: 1.25rem;
   }
 }

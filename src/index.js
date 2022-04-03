@@ -21,14 +21,13 @@ const submitContactForm = document.querySelector('#contact-form')
 const itemsList = document.querySelector('.items')
 const backButton = document.querySelector('#back-button')
 const confirmBooking = document.querySelector('#confirm-form')
+const loading = document.querySelector('.loading-mask')
 
 window.addEventListener('load', () => {
   preloader.style.opacity = 0
   preloader.style.zIndex = '-999'
 
-  setTimeout(() => {
-    wrap.style.opacity = 1
-  }, 500)
+  wrap.style.opacity = 1
 })
 
 window.addEventListener('scroll', () => navAnimation())
@@ -66,14 +65,18 @@ toItemsButton.forEach((button) =>
   button.addEventListener('click', () => {
     pageNavigation('items')
 
-    const itemsData =
-      'https://res.cloudinary.com/t19887348/raw/upload/v1648694975/service-items_mgnfpi.json'
-    fetchData(itemsData).then((data) => {
-      const items = document.querySelector('.items')
+    loading.style.display = 'flex'
 
-      const itemList = data
-        .map((item) => {
-          return `
+    const itemsData = 'https://res.cloudinary.com/t19887348/raw/upload/v1648694975/service-items_mgnfpi.json'
+
+    setTimeout(() => {
+      fetchData(itemsData)
+        .then((data) => {
+          const items = document.querySelector('.items')
+
+          const itemList = data
+            .map((item) => {
+              return `
             <li class="item">
               <img
                 class="item-img"
@@ -85,16 +88,24 @@ toItemsButton.forEach((button) =>
               <button class="item-book">book now</button>
             </li>
           `
-        })
-        .join('')
+            })
+            .join('')
 
-      items.innerHTML = itemList
-    })
+          items.innerHTML = itemList
+          loading.style.display = 'none'
+        })
+        .catch(() => {
+          alert('An error occurred please try again later.')
+          pageNavigation('home')
+          loading.style.display = 'none'
+        })
+    }, 1000)
   }),
 )
 
 submitContactForm.addEventListener('submit', (e) => {
   e.preventDefault()
+  loading.style.display = 'flex'
 
   emailjs
     .sendForm(
@@ -107,10 +118,12 @@ submitContactForm.addEventListener('submit', (e) => {
       (response) => {
         alert('Your message has been submitted.')
         console.log('SUCCESS!', response.status, response.text)
+        loading.style.display = 'none'
       },
       (err) => {
         alert('An error occurred please try again later.')
         console.log('FAILED...', err)
+        loading.style.display = 'none'
       },
     )
 
@@ -139,6 +152,7 @@ backButton.addEventListener('click', () => pageNavigation('summary'))
 
 confirmBooking.addEventListener('submit', (e) => {
   e.preventDefault()
+  loading.style.display = 'flex'
 
   emailjs
     .sendForm(
@@ -153,10 +167,12 @@ confirmBooking.addEventListener('submit', (e) => {
           'Your booking request has been sent. \n We will get back to you ASAP!',
         )
         console.log('SUCCESS!', response.status, response.text)
+        loading.style.display = 'none'
       },
       (err) => {
         alert('An error occurred please try again later.')
         console.log('FAILED...', err)
+        loading.style.display = 'none'
       },
     )
 })

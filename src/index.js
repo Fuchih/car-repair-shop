@@ -17,7 +17,7 @@ const toServiceButton = document.querySelector('#redirect-to-service')
 const toMapButton = document.querySelector('#redirect-to-map')
 const toItemsButton = document.querySelectorAll('.redirect-items')
 const googleMap = document.querySelector('#google-map')
-const submitForm = document.querySelector('#contact-form')
+const submitContactForm = document.querySelector('#contact-form')
 const itemsList = document.querySelector('.items')
 const backButton = document.querySelector('#back-button')
 
@@ -48,9 +48,7 @@ targetAnchors.forEach((anchors) => {
   )
 })
 
-toServiceButton.addEventListener('click', () => {
-  pageNavigation('service')
-})
+toServiceButton.addEventListener('click', () => pageNavigation('service'))
 
 toMapButton.addEventListener('click', () => {
   pageNavigation('contact')
@@ -94,7 +92,7 @@ toItemsButton.forEach((button) =>
   }),
 )
 
-submitForm.addEventListener('submit', (e) => {
+submitContactForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
   emailjs
@@ -115,7 +113,7 @@ submitForm.addEventListener('submit', (e) => {
       },
     )
 
-  submitForm.reset()
+  submitContactForm.reset()
 })
 
 itemsList.addEventListener('click', (e) => {

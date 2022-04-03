@@ -1,5 +1,6 @@
 import navAnimation from './modules/navAnimation'
 import toggleNavBar from './modules/toggleNavBar'
+import scrollAnimation from './modules/scrollAnimation'
 import pageNavigation from './modules/pageNavigation'
 import fetchData from './modules/fetchData'
 import setSummary from './modules/summary'
@@ -67,7 +68,8 @@ toItemsButton.forEach((button) =>
 
     loading.style.display = 'flex'
 
-    const itemsData = 'https://res.cloudinary.com/t19887348/raw/upload/v1648694975/service-items_mgnfpi.json'
+    const itemsData =
+      'https://res.cloudinary.com/t19887348/raw/upload/v1648694975/service-items_mgnfpi.json'
 
     setTimeout(() => {
       fetchData(itemsData)

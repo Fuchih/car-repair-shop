@@ -1,11 +1,6 @@
-let step = 0
-
-export default function scrollAnimation() {
+export default function scrollAnimation(target = 0) {
   if (window.pageYOffset > 0) {
-    step -= 10
-    window.scroll(0, window.pageYOffset + step)
+    window.scrollTo(0, target)
     requestAnimationFrame(scrollAnimation)
-  } else {
-    step = 0
   }
 }

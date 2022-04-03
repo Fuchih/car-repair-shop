@@ -28,7 +28,7 @@
     }
   }
 
-  @at-root .confirm-container {
+  @at-root #confirm-form {
     display              : grid;
     gap                  : 2.5rem;
     grid-template-columns: 3fr 2fr;
@@ -76,8 +76,12 @@
   }
 }
 
+.booking-details-hidden {
+  display: none;
+}
+
 @media screen and (max-width: 1100px) {
-  .confirm-container {
+  #confirm-form {
     grid-template-columns: 1fr;
   }
 }

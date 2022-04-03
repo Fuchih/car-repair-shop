@@ -20,6 +20,7 @@ const googleMap = document.querySelector('#google-map')
 const submitContactForm = document.querySelector('#contact-form')
 const itemsList = document.querySelector('.items')
 const backButton = document.querySelector('#back-button')
+const confirmBooking = document.querySelector('#confirm-form')
 
 window.addEventListener('load', () => {
   preloader.style.opacity = 0
@@ -134,3 +135,27 @@ itemsList.addEventListener('click', (e) => {
 })
 
 backButton.addEventListener('click', () => pageNavigation('summary'))
+
+confirmBooking.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  emailjs
+    .sendForm(
+      'service_0jti1ia',
+      'template_9uh82nt',
+      '#confirm-form',
+      'cm2n-IR-_xcXVmrHC',
+    )
+    .then(
+      (response) => {
+        alert(
+          'Your booking request has been sent. \n We will get back to you ASAP!',
+        )
+        console.log('SUCCESS!', response.status, response.text)
+      },
+      (err) => {
+        alert('An error occurred please try again later.')
+        console.log('FAILED...', err)
+      },
+    )
+})

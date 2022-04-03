@@ -1346,7 +1346,7 @@
           </button>
         </div>
 
-        <form class="confirm-container">
+        <form id="confirm-form">
           <div class="fill-out">
             <h3 class="fill-out-title">Fill out your details</h3>
             <hr />
@@ -1354,17 +1354,33 @@
             <div class="name-email">
               <div>
                 <label for="confirm-name">Name</label>
-                <input type="text" id="confirm-name" required />
+                <input
+                  type="text"
+                  id="confirm-name"
+                  name="confirm-name"
+                  required
+                />
               </div>
               <div>
                 <label for="confirm-email">Email</label>
-                <input type="text" id="confirm-email" required />
+                <input
+                  type="email"
+                  id="confirm-email"
+                  name="confirm-email"
+                  required
+                />
               </div>
             </div>
             <label for="confirm-phone">Phone Number</label>
-            <input type="number" id="confirm-phone" />
+            <input type="number" id="confirm-phone" name="confirm-phone" />
             <label for="confirm-textarea">Add Your Message</label>
-            <textarea id="confirm-textarea"></textarea>
+            <textarea id="confirm-textarea" name="confirm-textarea"></textarea>
+
+            <input
+              type="text"
+              name="booking-details"
+              class="booking-details-hidden"
+            />
           </div>
 
           <div class="confirm-summary">

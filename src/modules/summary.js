@@ -9,6 +9,8 @@ export default function setSummary() {
   const summaryTime = document.querySelector('.summary-detail-time')
   const timeSheet = document.querySelector('.timesheet')
   const next = document.querySelector('#booking-next')
+  const itemTitle = document.querySelector('.booking-item-title')
+  const summaryTitle = document.querySelector('.summary-detail-title')
 
   const datePicker = MCDatepicker.create({
     el: '#dateTimePicker',
@@ -23,6 +25,7 @@ export default function setSummary() {
 
   const formattedDate = datePicker.getFormatedDate()
   today.innerText = formattedDate
+  summaryTitle.innerText = itemTitle.innerText
 
   datePicker.onClose(() => {
     today.innerText = dateTimeInput.value
@@ -40,10 +43,8 @@ export default function setSummary() {
   })
 
   next.addEventListener('click', () => {
-    const itemTitle = document.querySelector('.summary-detail-title').innerText
-    const summaryPrice = document.querySelector(
-      '.summary-detail-price',
-    ).innerText
+    const summaryPrice = document.querySelector('.summary-detail-price').innerText
+
     const dateTime = `${summaryDate.innerText} ${summaryTime.innerText}`
 
     if (!Boolean(summaryTime.innerText) || !Boolean(summaryDate.innerText)) {
@@ -51,7 +52,7 @@ export default function setSummary() {
       return
     }
 
-    getBookingInfo(itemTitle, dateTime, summaryPrice)
+    getBookingInfo(itemTitle.innerText, dateTime, summaryPrice)
     pageNavigation('confirm')
   })
 }

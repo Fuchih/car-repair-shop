@@ -19,6 +19,7 @@ const toItemsButton = document.querySelectorAll('.redirect-items')
 const googleMap = document.querySelector('#google-map')
 const submitForm = document.querySelector('#contact-form')
 const itemsList = document.querySelector('.items')
+const backButton = document.querySelector('#back-button')
 
 window.addEventListener('load', () => {
   preloader.style.opacity = 0
@@ -130,6 +131,8 @@ itemsList.addEventListener('click', (e) => {
 
   itemTitle.innerText = selectedItem
   summaryPrice.innerText = selectedItemPrice
+
+  setSummary()
 })
 
-setSummary()
+backButton.addEventListener('click', () => pageNavigation('summary'))

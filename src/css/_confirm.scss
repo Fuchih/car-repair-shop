@@ -1,0 +1,105 @@
+#confirm {
+  // position        : absolute;
+  // transform       : translateX(-500vw);
+  min-height      : 31.25rem;
+  padding         : 2rem 2.5rem;
+  color           : var(--clr-black);
+  background-color: #fff;
+
+  @at-root .back {
+    padding: 10rem 0 5rem 0;
+
+    @at-root #back-button {
+      display         : flex;
+      justify-content : center;
+      align-items     : center;
+      padding         : 1.25rem 1.75rem 1.25rem 0;
+      border          : none;
+      background-color: transparent;
+      cursor          : pointer;
+
+      .button-svg {
+        padding-top: 5px;
+      }
+
+      .back-button-text {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  @at-root .confirm-container {
+    display              : grid;
+    gap                  : 2.5rem;
+    grid-template-columns: 3fr 2fr;
+
+    .fill-out>p,
+    .confirm-summary>p {
+      margin-top: 1.5rem;
+    }
+
+    .name-email {
+      display        : flex;
+      justify-content: space-between;
+    }
+
+    #confirm-phone,
+    #confirm-textarea {
+      width: 100%;
+    }
+
+    #confirm-textarea {
+      height: 4.6875rem;
+    }
+  }
+
+  input {
+    width    : 17.5rem;
+    height   : 2rem;
+    font-size: 2rem;
+  }
+
+  label {
+    display: block;
+    margin : 1rem 0 0.5rem 0;
+  }
+
+  .fill-out-title,
+  .confirm-summary-title,
+  .payment-details {
+    color: var(--clr-red-dark);
+  }
+
+
+  #submit-booking {
+    @include button
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .confirm-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .name-email {
+    flex-direction: column;
+
+    input {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  .fill-out-title,
+  .confirm-summary-title {
+    font-size: 1.5rem;
+  }
+
+  .payment-details {
+    font-size: 1.25rem;
+  }
+}

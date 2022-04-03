@@ -115,6 +115,10 @@ p {
   font-size    : 1.25rem;
 }
 
+textarea {
+  resize: none;
+}
+
 @mixin linearGradient($dir, $color1, $color2) {
   background: linear-gradient(to $dir, $color1, $color2);
 }

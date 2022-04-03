@@ -1325,7 +1325,59 @@
       </section>
 
       <section id="confirm">
-        <h1>To Do ....</h1>
+        <div class="back">
+          <button id="back-button">
+            <span>
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                width="20"
+                height="20"
+                aria-hidden="true"
+                class="button-svg"
+              >
+                <path
+                  d="M12.2929466,3.99983983 L13.0000534,4.70694661 L7.7015668,10.0028398 L13,15.293 L12.2928932,16.0001068 L6.2895668,10.0061485 L6.2925668,10.0028398 L6.29036026,10 L12.2929466,3.99983983 Z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span class="back-button-text">Back</span>
+          </button>
+        </div>
+
+        <form class="confirm-container">
+          <div class="fill-out">
+            <h3 class="fill-out-title">Fill out your details</h3>
+            <hr />
+            <p>Tell us a bit about yourself</p>
+            <div class="name-email">
+              <div>
+                <label for="confirm-name">Name</label>
+                <input type="text" id="confirm-name" required />
+              </div>
+              <div>
+                <label for="confirm-email">Email</label>
+                <input type="text" id="confirm-email" required />
+              </div>
+            </div>
+            <label for="confirm-phone">Phone Number</label>
+            <input type="number" id="confirm-phone" />
+            <label for="confirm-textarea">Add Your Message</label>
+            <textarea id="confirm-textarea"></textarea>
+          </div>
+
+          <div class="confirm-summary">
+            <h3 class="confirm-summary-title">Booking Summary</h3>
+            <hr />
+            <p class="confirm-summary-item">TIRE CHANGE</p>
+            <p class="confirm-summary-datetime">April 8, 2022, 12:30 pm</p>
+            <hr />
+            <h4 class="payment-details">Payment Details</h4>
+            <p class="total">$30</p>
+            <button id="submit-booking" type="submmit">book now</button>
+          </div>
+        </form>
       </section>
 
       <footer>

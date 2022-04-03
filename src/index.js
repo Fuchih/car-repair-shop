@@ -123,6 +123,7 @@ itemsList.addEventListener('click', (e) => {
 
   let target = e.target
   if (target.nodeName === 'BUTTON') pageNavigation('summary')
+  else return
 
   const selectedItem =
     target.previousElementSibling.previousElementSibling.textContent

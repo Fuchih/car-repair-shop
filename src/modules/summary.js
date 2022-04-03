@@ -36,14 +36,17 @@ export default function setSummary() {
     const timeLists = document.querySelectorAll('.timesheet>li')
     const target = e.target
 
-    timeLists.forEach((list) => list.classList.remove('selected-time'))
+    if (target.nodeName === 'UL') return
 
+    timeLists.forEach((list) => list.classList.remove('selected-time'))
     summaryTime.innerText = target.textContent
     target.classList.add('selected-time')
   })
 
   next.addEventListener('click', () => {
-    const summaryPrice = document.querySelector('.summary-detail-price').innerText
+    const summaryPrice = document.querySelector(
+      '.summary-detail-price',
+    ).innerText
 
     const dateTime = `${summaryDate.innerText} ${summaryTime.innerText}`
 

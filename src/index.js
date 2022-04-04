@@ -55,10 +55,7 @@ toMapButton.addEventListener('click', () => {
   pageNavigation('contact')
 
   setTimeout(() => {
-    window.scrollTo({
-      top: googleMap.getBoundingClientRect().top - 45,
-      behavior: 'smooth',
-    })
+    scrollAnimation(googleMap.getBoundingClientRect().top - 45)
   }, 800)
 })
 

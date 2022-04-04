@@ -1,14 +1,16 @@
-export default function scrollAnimation(target = 0) {
-  clearInterval(window.timer)
+export default function scrollAnimation(position = 0) {
+  let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
 
-  window.timer = setInterval(() => {
-    let step = (target - window.pageYOffset) / 10
-    step = step > 0 ? Math.ceil(step) : Math.floor(step)
+  const step = () => {
+    const distance = position - scrollTop
+    scrollTop = scrollTop + distance / 8
 
-    if (window.pageYOffset === target) {
-      clearInterval(window.timer)
+    if (Math.abs(distance) < 1) {
+      window.scrollTo(0, position)
+    } else {
+      window.scrollTo(0, scrollTop)
+      requestAnimationFrame(step)
     }
-
-    window.scroll(0, window.pageYOffset + step)
-  }, 15)
+  }
+  step()
 }

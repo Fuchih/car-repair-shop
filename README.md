@@ -1,5 +1,5 @@
 
-### only using html scss javascript, no framwork no library
+### only using html scss javascript, no framwork
 ---
 # getting started
 

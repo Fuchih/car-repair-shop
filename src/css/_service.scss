@@ -198,7 +198,7 @@
   }
 
   &:hover .battery-negative {
-    animation: battery-negative 1.5s linear;
+    animation: battery-negative 1.5s 3 linear;
 
     @keyframes battery-negative {
       0% {

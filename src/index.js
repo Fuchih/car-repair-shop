@@ -16,7 +16,7 @@ const serviceAnchors = document.querySelectorAll('.service-anchor')
 const contactAnchors = document.querySelectorAll('.contact-anchor')
 const toServiceButton = document.querySelector('#redirect-to-service')
 const toMapButton = document.querySelector('#redirect-to-map')
-const toItemsButton = document.querySelectorAll('.redirect-items')
+const toItemsButtons = document.querySelectorAll('.redirect-items')
 const googleMap = document.querySelector('#google-map')
 const submitContactForm = document.querySelector('#contact-form')
 const itemsList = document.querySelector('.items')
@@ -44,6 +44,7 @@ const targetAnchors = [
 targetAnchors.forEach((anchors) => {
   anchors.forEach((anchor) =>
     anchor.addEventListener('click', (e) => {
+      console.log(e.target)
       pageNavigation(e)
     }),
   )
@@ -59,7 +60,7 @@ toMapButton.addEventListener('click', () => {
   }, 800)
 })
 
-toItemsButton.forEach((button) =>
+toItemsButtons.forEach((button) =>
   button.addEventListener('click', () => {
     pageNavigation('items')
 

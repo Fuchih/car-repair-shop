@@ -44,7 +44,6 @@ const targetAnchors = [
 targetAnchors.forEach((anchors) => {
   anchors.forEach((anchor) =>
     anchor.addEventListener('click', (e) => {
-      console.log(e.target)
       pageNavigation(e)
     }),
   )

@@ -13,7 +13,7 @@ const navTargets = { home, about, service, contact, items, summary, confirm }
 export default function pageNavigation(event) {
   const targetName = event.target?.textContent ?? event
 
-  for (const targetName in navTargets) {
+  for (const targetName of Object.keys(navTargets)) {
     navTargets[targetName].style.position = 'absolute'
     navTargets[targetName].style.transform = 'translateX(-500vw)'
   }

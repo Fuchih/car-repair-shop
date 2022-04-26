@@ -1285,7 +1285,16 @@
             <label for="message">Message</label>
             <textarea name="message" id="message"></textarea>
 
-            <button type="submit" id="contact-submit">submit</button>
+            <div class="submit-container">
+              <p class="verification-code">12345</p>
+              <input
+                type="text"
+                class="verification-input"
+                placeholder="Enter code"
+                maxlength="5"
+              />
+              <button type="submit" id="contact-submit">submit</button>
+            </div>
           </form>
         </address>
 

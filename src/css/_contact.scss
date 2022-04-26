@@ -52,28 +52,48 @@
 
   @at-root #contact-form {
 
-    input,
-    label {
+    >input,
+    >label {
       display  : block;
-      width    : 90%;
+      width    : 100%;
       height   : 2rem;
       font-size: 1.5rem;
 
     }
 
-    input {
+    >input {
       margin-bottom: 3rem;
       outline      : none;
     }
 
     #message {
-      width  : 90%;
+      width  : 100%;
       height : 10rem;
       outline: none;
     }
 
+    @at-root .submit-container {
+      display    : flex;
+      gap        : 1rem;
+      align-items: center;
+      margin     : 1rem 0;
+
+      >.verification-code {
+        margin-bottom: 0;
+      }
+
+      >.verification-input {
+        max-width : 5rem;
+        padding   : 1rem 0;
+        text-align: center;
+        outline   : none;
+      }
+
+    }
+
     #contact-submit {
-      @include button
+      @include button;
+      margin-top: 0;
     }
   }
 }

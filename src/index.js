@@ -4,6 +4,7 @@ import scrollAnimation from './modules/scrollAnimation'
 import pageNavigation from './modules/pageNavigation'
 import fetchData from './modules/fetchData'
 import setSummary from './modules/summary'
+import { generateCode, isCodeCorrect } from './modules/verification'
 import emailjs from '@emailjs/browser'
 import './css/index.scss'
 
@@ -102,8 +103,24 @@ toItemsButtons.forEach((button) =>
   }),
 )
 
+window.onload = () => {
+  const randomCode = document.querySelector('.verification-code')
+  const getCode = generateCode()
+  let result = getCode()
+
+  randomCode.innerText = result
+}
+
 submitContactForm.addEventListener('submit', (e) => {
   e.preventDefault()
+  const randomCode = document.querySelector('.verification-code')
+  const code = randomCode.innerText
+
+  if (!isCodeCorrect(code)) {
+    alert('Wrong Code... Please try again')
+    return
+  }
+
   loading.style.display = 'flex'
 
   emailjs
